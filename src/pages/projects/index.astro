@@ -1,0 +1,236 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const projects = [
+  {
+    title: 'FRDVC',
+    tagline: '探索复杂系统中价值生成与行为演化机制',
+    description:
+      'FRDVC 是一个持续发展的跨学科研究项目，旨在探索价值（Value）、欲望（Desire）、承认（Recognition）、成本（Cost）与流动（Flow）之间的动态关系。研究如何通过反馈、选择与流动机制，个体行为逐渐演化为宏观秩序。',
+    status: '持续研究中',
+    statusType: 'active',
+  },
+  {
+    title: 'Agent Lab',
+    tagline: '用于构建多智能体模拟的平台',
+    description:
+      '通过设计简单规则，观察合作、竞争、资源流动、网络形成以及系统演化等现象。Agent Lab 为 FRDVC 框架提供计算实验的基础设施，使得理论假设可以在受控环境中被验证、修正与迭代。',
+    status: '开发中',
+    statusType: 'dev',
+  },
+  {
+    title: 'Research Log',
+    tagline: '公开记录研究过程',
+    description:
+      '公开记录研究过程，包括理论推演、实验记录、模型修订、阅读笔记与阶段性总结。希望完整保留一个研究项目从概念到实践的演化轨迹，使得研究路径可追溯、可复盘、可被审视。',
+    status: '持续更新',
+    statusType: 'ongoing',
+  },
+];
+---
+
+<Layout>
+  <main class="page">
+    <h1>Projects</h1>
+    <p class="intro">
+      研究并非孤立的思辨，而是理论、工程与实验的有机统一。以下项目共同构成了 FRDVC 研究生态。
+    </p>
+
+    <div class="list">
+      {
+        projects.map((proj) => (
+          <article class="project-card">
+            <div class="card-top">
+              <h2>{proj.title}</h2>
+              <span class={`status status--${proj.statusType}`}>{proj.status}</span>
+            </div>
+            <p class="tagline">{proj.tagline}</p>
+            <p class="desc">{proj.description}</p>
+          </article>
+        ))
+      }
+    </div>
+
+    <section class="section">
+      <h2>项目生态</h2>
+      <div class="eco-grid">
+        <div class="eco-node">
+          <strong>FRDVC</strong>
+          <span>理论框架</span>
+        </div>
+        <span class="eco-arrow">&harr;</span>
+        <div class="eco-node">
+          <strong>Agent Lab</strong>
+          <span>计算实验</span>
+        </div>
+        <span class="eco-arrow">&harr;</span>
+        <div class="eco-node">
+          <strong>Research Log</strong>
+          <span>知识沉淀</span>
+        </div>
+      </div>
+      <p class="eco-note">
+        理论驱动实验设计，实验结果修正理论，整个过程被记录、审视与共享。
+      </p>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 8px;
+  }
+
+  .intro {
+    color: #4b5563;
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 40px;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .project-card {
+    padding: 28px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    transition: box-shadow 0.2s;
+  }
+
+  .project-card:hover {
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+
+  .card-top h2 {
+    font-size: 22px;
+    margin: 0;
+  }
+
+  .status {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+
+  .status--active {
+    background: #dcfce7;
+    color: #166534;
+  }
+
+  .status--dev {
+    background: #fef3c7;
+    color: #92400e;
+  }
+
+  .status--ongoing {
+    background: #e0e7ff;
+    color: #3730a3;
+  }
+
+  .tagline {
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 10px;
+  }
+
+  .desc {
+    color: #4b5563;
+    line-height: 1.7;
+    margin: 0;
+    font-size: 15px;
+  }
+
+  .section {
+    margin-top: 56px;
+  }
+
+  .section h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 24px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  .eco-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .eco-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 24px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    min-width: 140px;
+  }
+
+  .eco-node strong {
+    font-size: 16px;
+    color: #111827;
+  }
+
+  .eco-node span {
+    font-size: 12px;
+    color: #6b7280;
+  }
+
+  .eco-arrow {
+    color: #6366f1;
+    font-size: 22px;
+    font-weight: 300;
+  }
+
+  .eco-note {
+    text-align: center;
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 28px;
+    }
+
+    .eco-grid {
+      flex-direction: column;
+    }
+
+    .eco-arrow {
+      transform: rotate(90deg);
+    }
+  }
+</style>

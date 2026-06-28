@@ -1,0 +1,212 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const researchAreas = [
+  {
+    title: '价值与承认的动态关系',
+    description:
+      '研究价值如何在个体间的互动与承认过程中被创造、传递与消解。探讨承认机制如何作为价值形成的社会基础。',
+    keywords: ['价值理论', '承认机制', '社会互动'],
+  },
+  {
+    title: '欲望、成本与决策机制',
+    description:
+      '分析欲望的生成与演化如何驱动个体决策，以及成本约束如何塑造行为模式。研究反馈系统在决策过程中的核心作用。',
+    keywords: ['行为经济学', '决策理论', '反馈系统'],
+  },
+  {
+    title: '信息流动与结构涌现',
+    description:
+      '探索信息在网络中的流动规律，以及局部信息交换如何导致宏观结构的自组织涌现。关注信息不对称、传播速度与路径依赖。',
+    keywords: ['网络科学', '信息流动', '涌现'],
+  },
+  {
+    title: '多智能体模拟与计算实验',
+    description:
+      '通过构建多智能体系统，在受控环境中观察合作、竞争、资源分配等行为的演化。以计算模拟作为理论验证和发现工具。',
+    keywords: ['多智能体系统', '模拟', '计算实验'],
+  },
+  {
+    title: '伦理、哲学与科学方法论',
+    description:
+      '反思模型设计与实验过程中的伦理考量。从科学哲学与技术哲学视角审视研究方法论，确保研究的开放性与自反性。',
+    keywords: ['科学哲学', '技术哲学', '伦理'],
+  },
+];
+
+const currentWork = [
+  '理论框架构建 —— 形式化 FRDVC 核心概念与关系',
+  '数学形式化 —— 将定性假设转化为可量化的模型',
+  '多智能体模拟（Agent-Based Simulation） —— 在 Agent Lab 中验证理论',
+  '可视化实验 —— 将抽象关系转化为可感知的视觉形式',
+  '工程实现 —— 构建稳定、可复用的模拟与可视化工具链',
+  '模型伦理研究 —— 确保模拟与实验符合伦理准则',
+];
+---
+
+<Layout>
+  <main class="page">
+    <h1>FRDVC Framework</h1>
+    <p class="intro">
+      FRDVC 是一个持续发展的跨学科研究框架，旨在探索价值（Value）、欲望（Desire）、承认（Recognition）、成本（Cost）与流动（Flow）之间的动态关系。
+    </p>
+
+    <section class="section">
+      <h2>研究领域</h2>
+      <div class="areas">
+        {
+          researchAreas.map((area) => (
+            <article class="area-card">
+              <h3>{area.title}</h3>
+              <p>{area.description}</p>
+              <div class="keywords">
+                {area.keywords.map((kw) => <span class="kw-tag">{kw}</span>)}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>当前工作</h2>
+      <ul class="work-list">
+        {currentWork.map((item) => <li>{item}</li>)}
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>研究哲学</h2>
+      <blockquote class="quote">
+        研究目标并非建立封闭的理论体系，而是通过理论、工程实现与实验观察，不断修正和完善对复杂现象的理解。
+      </blockquote>
+      <p class="philo-text">
+        本项目采用迭代式研究方法。理论不是终点，而是实验的起点。
+        每一次实验，无论成功或失败，都将作为模型演化的重要依据。
+        我们希望完整保留一个研究项目从概念到实践的演化轨迹。
+      </p>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 8px;
+  }
+
+  .intro {
+    color: #4b5563;
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 48px;
+  }
+
+  .section {
+    margin-top: 52px;
+  }
+
+  .section h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  .areas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .area-card {
+    padding: 24px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    transition: box-shadow 0.2s;
+  }
+
+  .area-card:hover {
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  }
+
+  .area-card h3 {
+    font-size: 17px;
+    margin: 0 0 8px;
+    color: #111827;
+  }
+
+  .area-card p {
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.65;
+    margin: 0 0 14px;
+  }
+
+  .keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .kw-tag {
+    display: inline-block;
+    padding: 2px 10px;
+    background: #f3f4f6;
+    color: #6b7280;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+
+  .work-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .work-list li {
+    padding: 10px 16px;
+    background: #f9fafb;
+    border-radius: 8px;
+    border-left: 3px solid #6366f1;
+    color: #374151;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .quote {
+    border-left: 4px solid #6366f1;
+    padding: 16px 24px;
+    margin: 0 0 16px;
+    background: #fafafe;
+    border-radius: 0 8px 8px 0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #374151;
+    font-style: italic;
+  }
+
+  .philo-text {
+    color: #4b5563;
+    line-height: 1.75;
+    font-size: 15px;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 28px;
+    }
+  }
+</style>

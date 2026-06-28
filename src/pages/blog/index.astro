@@ -1,0 +1,132 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const posts: CollectionEntry<'blog'>[] = await getCollection('blog');
+posts.sort((a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<Layout>
+  <main class="page">
+    <h1>Research Log</h1>
+    <p class="intro">
+      公开记录研究过程：理论推演、实验记录、模型修订、阅读笔记、阶段性总结。完整保留从概念到实践的演化轨迹。
+    </p>
+
+    {
+      posts.length === 0 ? (
+        <div class="empty">
+          <p>暂无文章。</p>
+        </div>
+      ) : (
+        <div class="list">
+          {posts.map((post) => (
+            <article class="item">
+              <time datetime={post.data.date.toISOString().slice(0, 10)}>
+                {post.data.date.toLocaleDateString('zh-CN', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </time>
+              <h2>{post.data.title}</h2>
+              {post.data.description && <p>{post.data.description}</p>}
+              {
+                post.data.tags && post.data.tags.length > 0 && (
+                  <div class="tags">
+                    {post.data.tags.map((tag) => <span class="tag">{tag}</span>)}
+                  </div>
+                )
+              }
+            </article>
+          ))}
+        </div>
+      )
+    }
+  </main>
+</Layout>
+
+<style>
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 24px;
+  }
+
+  h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 8px;
+  }
+
+  .intro {
+    color: #6b7280;
+    font-size: 17px;
+    margin: 0 0 40px;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .item {
+    padding: 24px 28px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    transition: box-shadow 0.2s;
+  }
+
+  .item:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  time {
+    color: #9ca3af;
+    font-size: 13px;
+  }
+
+  .item h2 {
+    font-size: 20px;
+    margin: 6px 0 8px;
+  }
+
+  .item p {
+    color: #4b5563;
+    line-height: 1.65;
+    margin: 0 0 10px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 1px 8px;
+    background: #f3f4f6;
+    color: #6b7280;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+
+  .empty {
+    padding: 60px 0;
+    text-align: center;
+    color: #9ca3af;
+  }
+
+  .empty p {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 28px;
+    }
+  }
+</style>

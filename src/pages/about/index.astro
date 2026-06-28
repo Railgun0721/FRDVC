@@ -1,0 +1,196 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout>
+  <main class="page">
+    <h1>About</h1>
+
+    <section class="section">
+      <h2>研究关注</h2>
+      <p>
+        我关注复杂系统中结构如何生成，以及个体行为如何通过反馈、选择与流动机制逐渐演化为宏观秩序。
+      </p>
+      <p>
+        研究围绕复杂系统、涌现、多智能体系统、网络科学、行为经济学、计算社会科学、人工智能、科学哲学与技术哲学、信息流动与价值形成、决策机制与反馈系统等方向展开。
+      </p>
+      <p>
+        研究目标并非建立封闭的理论体系，而是通过理论、工程实现与实验观察，不断修正和完善对复杂现象的理解。
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>研究方法论</h2>
+      <div class="method-principles">
+        <div class="principle">
+          <h3>迭代式研究</h3>
+          <p>理论不是终点，而是实验的起点。研究流程为：提出问题 → 建立模型 → 工程实现 → 实验观察 → 修正模型 → 持续迭代。每一次实验，无论成功或失败，都将作为模型演化的重要依据。</p>
+        </div>
+        <div class="principle">
+          <h3>开放性与自反性</h3>
+          <p>研究过程被公开记录，路径可追溯、可复盘、可被审视。通过持续的自我审视与外部反馈，确保研究方向的合理性与方法的可靠性。</p>
+        </div>
+        <div class="principle">
+          <h3>跨学科整合</h3>
+          <p>综合运用复杂系统理论、计算模拟、哲学反思与工程实践。单一学科的视角不足以理解复杂现象的全貌，跨学科的对话与整合是必要的。</p>
+        </div>
+        <div class="principle">
+          <h3>简单规则原则</h3>
+          <p>关注简单规则如何生成复杂行为。在 Agent Lab 中通过设计最小化的行为规则，观察宏观结构的自组织涌现。复杂性的来源不应被预设，而应从实验中自然浮现。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>当前研究</h2>
+      <div class="current-focus">
+        <p>
+          <strong>FRDVC Framework</strong> —— 探索价值、欲望、承认、成本与流动之间的动态关系。当前工作包括理论框架构建、数学形式化、多智能体模拟、可视化实验、工程实现与模型伦理研究。
+        </p>
+        <p>
+          <strong>Agent Lab</strong> —— 构建多智能体模拟平台。通过设计简单规则，观察合作、竞争、资源流动、网络形成以及系统演化等现象。
+        </p>
+        <p>
+          <strong>Research Log</strong> —— 公开记录研究过程，包括理论推演、实验记录、模型修订、阅读笔记与阶段性总结。希望完整保留一个研究项目从概念到实践的演化轨迹。
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>联系方式</h2>
+      <ul class="contact">
+        <li>
+          <span class="label">GitHub</span>
+          <a href="https://github.com/Railgun0721" target="_blank" rel="noopener noreferrer"
+            >github.com/Railgun0721</a
+          >
+        </li>
+      </ul>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 40px;
+  }
+
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  .section p {
+    color: #4b5563;
+    line-height: 1.75;
+    margin: 0 0 12px;
+    font-size: 15px;
+  }
+
+  .section p:last-child {
+    margin-bottom: 0;
+  }
+
+  .method-principles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 16px;
+  }
+
+  .principle {
+    padding: 20px 24px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    transition: box-shadow 0.2s;
+  }
+
+  .principle:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  .principle h3 {
+    font-size: 16px;
+    margin: 0 0 8px;
+    color: #111827;
+  }
+
+  .principle p {
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .current-focus p {
+    padding: 10px 16px;
+    background: #f9fafb;
+    border-radius: 8px;
+    border-left: 3px solid #6366f1;
+    margin-bottom: 10px;
+  }
+
+  .current-focus strong {
+    color: #111827;
+  }
+
+  .contact {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .contact li {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .label {
+    font-weight: 600;
+    min-width: 80px;
+    color: #374151;
+  }
+
+  .contact a {
+    color: #2563eb;
+    text-decoration: none;
+  }
+
+  .contact a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 28px;
+    }
+
+    .method-principles {
+      grid-template-columns: 1fr;
+    }
+
+    .contact li {
+      flex-direction: column;
+      gap: 4px;
+      align-items: flex-start;
+    }
+  }
+</style>

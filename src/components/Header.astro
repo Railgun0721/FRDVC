@@ -1,0 +1,81 @@
+---
+const navLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Research', href: '/research' },
+  { label: 'Experiments', href: '/experiments' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Research Log', href: '/blog' },
+  { label: 'About', href: '/about' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header>
+  <nav>
+    <ul>
+      {
+        navLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class:list={[{ active: currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href)) }]}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+
+<style>
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 0 24px;
+  }
+
+  nav {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 4px;
+  }
+
+  li {
+    margin: 0;
+  }
+
+  a {
+    display: block;
+    padding: 14px 18px;
+    text-decoration: none;
+    color: #4b5563;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: color 0.2s, background 0.2s;
+  }
+
+  a:hover {
+    color: #111827;
+    background: rgba(0, 0, 0, 0.04);
+  }
+
+  a.active {
+    color: #111827;
+    background: rgba(0, 0, 0, 0.06);
+  }
+</style>

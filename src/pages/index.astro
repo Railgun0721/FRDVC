@@ -1,11 +1,345 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <main class="page">
+    <section class="hero">
+      <h1>FRDVC</h1>
+      <p class="tagline">
+        探索价值（Value）、欲望（Desire）、承认（Recognition）、成本（Cost）与流动（Flow）之间的动态关系
+      </p>
+      <p class="subtitle">
+        一个持续发展的跨学科研究项目，通过理论、工程实现与实验观察，不断修正和完善对复杂现象的理解。
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>核心命题</h2>
+      <div class="questions">
+        <div class="question-item">
+          <span class="q-marker"></span>
+          <p>个体行为如何形成群体结构？</p>
+        </div>
+        <div class="question-item">
+          <span class="q-marker"></span>
+          <p>市场、组织与社会秩序如何从局部规则中涌现？</p>
+        </div>
+        <div class="question-item">
+          <span class="q-marker"></span>
+          <p>流动机制如何塑造价值与差异？</p>
+        </div>
+        <div class="question-item">
+          <span class="q-marker"></span>
+          <p>简单规则是否能够生成复杂系统？</p>
+        </div>
+        <div class="question-item">
+          <span class="q-marker"></span>
+          <p>如何通过计算模拟验证理论假设？</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>研究方向</h2>
+      <div class="directions">
+        <span class="tag">复杂系统</span>
+        <span class="tag">涌现</span>
+        <span class="tag">多智能体系统</span>
+        <span class="tag">网络科学</span>
+        <span class="tag">行为经济学</span>
+        <span class="tag">计算社会科学</span>
+        <span class="tag">人工智能</span>
+        <span class="tag">科学哲学与技术哲学</span>
+        <span class="tag">信息流动与价值形成</span>
+        <span class="tag">决策机制与反馈系统</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>研究方法</h2>
+      <div class="method-flow">
+        <div class="method-step">
+          <span class="step-num">1</span>
+          <strong>提出问题</strong>
+        </div>
+        <span class="arrow">&rarr;</span>
+        <div class="method-step">
+          <span class="step-num">2</span>
+          <strong>建立模型</strong>
+        </div>
+        <span class="arrow">&rarr;</span>
+        <div class="method-step">
+          <span class="step-num">3</span>
+          <strong>工程实现</strong>
+        </div>
+        <span class="arrow">&rarr;</span>
+        <div class="method-step">
+          <span class="step-num">4</span>
+          <strong>实验观察</strong>
+        </div>
+        <span class="arrow">&rarr;</span>
+        <div class="method-step">
+          <span class="step-num">5</span>
+          <strong>修正模型</strong>
+        </div>
+        <span class="arrow">&rarr;</span>
+        <div class="method-step">
+          <span class="step-num">∞</span>
+          <strong>持续迭代</strong>
+        </div>
+      </div>
+      <p class="method-note">理论不是终点，而是实验的起点。每一次实验，无论成功或失败，都将作为模型演化的重要依据。</p>
+    </section>
+
+    <section class="section">
+      <h2>当前项目</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>FRDVC Framework</h3>
+          <p>探索复杂系统中价值生成与行为演化机制的核心理论框架。研究价值、欲望、承认、成本与流动的动态关系。</p>
+          <span class="status">持续研究中</span>
+        </article>
+        <article class="card">
+          <h3>Agent Lab</h3>
+          <p>多智能体模拟平台。通过设计简单规则，观察合作、竞争、资源流动、网络形成以及系统演化等现象。</p>
+          <span class="status">开发中</span>
+        </article>
+        <article class="card">
+          <h3>Research Log</h3>
+          <p>公开记录研究过程：理论推演、实验记录、模型修订、阅读笔记、阶段性总结。完整保留从概念到实践的演化轨迹。</p>
+          <span class="status">持续更新</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>研究理念</h2>
+      <blockquote class="motto">
+        研究目标并非建立封闭的理论体系，而是通过理论、工程实现与实验观察，不断修正和完善对复杂现象的理解。
+      </blockquote>
+      <p class="focus-statement">
+        关注复杂系统中结构如何生成，以及个体行为如何通过反馈、选择与流动机制逐渐演化为宏观秩序。
+      </p>
+    </section>
+  </main>
 </Layout>
+
+<style>
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 60px 0 48px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0 0 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .tagline {
+    font-size: 17px;
+    color: #374151;
+    max-width: 640px;
+    margin: 0 auto 12px;
+    line-height: 1.6;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    color: #6b7280;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .section {
+    margin-top: 56px;
+  }
+
+  .section h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  .questions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .question-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 16px;
+    background: #f9fafb;
+    border-radius: 8px;
+    border-left: 3px solid #6366f1;
+  }
+
+  .q-marker {
+    font-weight: 700;
+    color: #6366f1;
+    font-size: 18px;
+    line-height: 1.5;
+    flex-shrink: 0;
+  }
+
+  .question-item p {
+    color: #374151;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 15px;
+  }
+
+  .directions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 6px 16px;
+    background: #eef2ff;
+    color: #4338ca;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .method-flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .method-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: #f3f4f6;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  .step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: #6366f1;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .method-step strong {
+    color: #111827;
+  }
+
+  .arrow {
+    color: #9ca3af;
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  .method-note {
+    color: #6b7280;
+    font-size: 15px;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    padding: 24px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    transition: box-shadow 0.2s;
+  }
+
+  .card:hover {
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .card h3 {
+    font-size: 18px;
+    margin: 0 0 8px;
+  }
+
+  .card p {
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.65;
+    margin: 0 0 14px;
+  }
+
+  .status {
+    display: inline-block;
+    padding: 3px 10px;
+    background: #fef3c7;
+    color: #92400e;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .motto {
+    border-left: 4px solid #6366f1;
+    padding: 16px 24px;
+    margin: 0 0 16px;
+    background: #fafafe;
+    border-radius: 0 8px 8px 0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #374151;
+    font-style: italic;
+  }
+
+  .focus-statement {
+    color: #4b5563;
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 40px 0 32px;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+    }
+
+    .method-flow {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .arrow {
+      display: none;
+    }
+  }
+</style>
